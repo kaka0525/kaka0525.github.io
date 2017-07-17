@@ -1,0 +1,388 @@
+
+/*body
+{
+  margin: 0;
+  padding: 0;
+
+  background: #232323;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}*/
+
+.side-nav
+{
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+a
+{
+  text-decoration: none;
+  color: #fed1bf;
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: #FED1BF;
+}
+
+#menuToggle
+{
+  display: block;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+ #menuToggle span
+ {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+ #menuToggle input:checked ~ span
+ {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+ #menu
+ {
+  position: absolute;
+  width: 200px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  padding-bottom: 5000px;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  font-weight: normal;
+  line-height: normal;
+
+  background: #000;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's fade it in from the left
+ */
+ #menuToggle input:checked ~ ul
+ {
+  transform: scale(1.0, 1.0);
+  opacity: 1;
+}
+
+body {
+  height: 100%;
+  /*background-color: #f2f2f2;*/
+}
+
+h1 > img {
+  display: block;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  /* make sure wide enough for desired number of columns */
+  width: 900px;
+}
+
+.portfolio-grid li {
+  display: inline-block;
+  margin: 5px 5px 5px 5px;
+  vertical-align: top;
+  /* make sure same width as background */
+  width: 428px;
+  /* make sure same height as background */
+  height: 290px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.grid-img {
+  /* images are 1498 x 1015 so scale accordingly */
+  background-size: 428px 290px;
+}
+
+.instashop {
+  background-image: url(media/images/instashop_project_page.png);
+}
+
+.copynhaste {
+  background-image: url(media/images/copynhaste_project_page.png);
+}
+
+.spotify {
+  background-image: url(media/images/spotify_project_page.png);
+}
+
+.derby {
+  background-image: url(media/images/derby_project_page.png);
+}
+
+.grid-blue {
+  background-color: #3498db;
+}
+
+.grid-purple {
+  background-color: #9b59b6;
+}
+
+.grid-overlay, .portfolio-link {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-overlay {
+  z-index: 98;
+  background-color: #f2f2f2;
+}
+
+.portfolio-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  vertical-align: middle;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.portfolio-link, .portfolio-link:hover {
+  color: #000;
+  font-weight: bold;
+  font-size: 22px;
+  z-index: 99;
+}
+
+.portfolio-link .subtitle {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.portfolio-link:hover {
+  opacity: 1.0;
+  background-color: transparent;
+}
+
+.animated {
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  -o-animation-duration:1s;
+  animation-duration:1s;
+  -webkit-animation-fill-mode:both;
+  -moz-animation-fill-mode:both;
+  -o-animation-fill-mode:both;
+  animation-fill-mode:both;
+}
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@-moz-keyframes flipInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -moz-transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    -moz-transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@-o-keyframes flipInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -o-transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    -o-transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInX;
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+}
+
+#header-icon-section {
+  padding-top: 100px;
+}
+
+#header-icon {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+}
+
+#header-icon-wrap {
+  position: relative;
+  left: -50%;
+  z-index: 1000;
+}
