@@ -202,10 +202,6 @@ body:before {
     will-change: transform;
     z-index: 9999
 }
-body.loading:before {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0)
-}
 
 @-webkit-keyframes bucket {
     0% {
