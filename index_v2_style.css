@@ -378,11 +378,10 @@ h1 > img {
 #header-icon {
   position: absolute;
   left: 50%;
-  top: 35%;
+  top: 250px;
 }
 
 #header-icon-wrap {
   position: relative;
   left: -50%;
-  z-index: 1000;
 }

@@ -1939,7 +1939,7 @@
 		color: #fff;
 		height: 300px;
 		background-color:  #C7EBD7;
-		
+
 	}
 	#subheader, #postheader {
 		background-color: #fff;
@@ -2623,7 +2623,7 @@ MEDIA QUERIES
 }
 
 
-/*customize*/ 
+/*customize*/
 .hightlight {
 	background-color: yellow;
 }
@@ -2662,4 +2662,8 @@ MEDIA QUERIES
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.inner a {
+	color: purple;
 }

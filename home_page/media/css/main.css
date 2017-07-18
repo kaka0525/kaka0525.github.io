@@ -1572,7 +1572,8 @@ textarea {
 .side-nav {
     color:#FFFFFF;
 }
-a:hover
+
+a:hover, li.side-nav:hover
 {
   color: #FED1BF;
 }

@@ -1939,7 +1939,7 @@
 		color: #fff;
 		height: 300px;
 		background-color: #FFE44C;
-		
+
 	}
 	#subheader, #postheader {
 		background-color: #fff;
@@ -2263,7 +2263,6 @@
 		/* Basic */
 
 			body {
-				background-color: #FFEFE9;
 				background-repeat: repeat, no-repeat;
 				background-size: auto, 100% auto;
 				background-position: top left, top center;
@@ -2623,7 +2622,7 @@ MEDIA QUERIES
 }
 
 
-/*customize*/ 
+/*customize*/
 .hightlight {
 	background-color: yellow;
 }
