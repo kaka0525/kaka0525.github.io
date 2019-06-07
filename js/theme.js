@@ -77,7 +77,7 @@
     /*----------------------------------------------------*/
 	if ($('.testimonial-slider').length) {
 		$('.testimonial-slider').owlCarousel({
-			loop: false,
+			loop: true,
 			margin: 30,
 			nav: true,
 			items: 1,
