@@ -81,7 +81,7 @@
 			margin: 30,
 			nav: true,
 			items: 1,
-			autoplay: false,
+			autoplay: true,
 			smartSpeed: 2500,
 			dots: true
 		});
