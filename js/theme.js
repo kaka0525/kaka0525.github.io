@@ -79,6 +79,7 @@
 		$('.testimonial-slider').owlCarousel({
 			loop: false,
 			margin: 30,
+			nav: true,
 			items: 1,
 			autoplay: false,
 			smartSpeed: 2500,
