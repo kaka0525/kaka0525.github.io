@@ -83,7 +83,8 @@
 			items: 1,
 			autoplay: true,
 			smartSpeed: 2500,
-			dots: true
+			dots: true,
+			navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
 		});
 	}
 
