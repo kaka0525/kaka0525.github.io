@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteCond %{THE_REQUEST} /index.html HTTP [NC]
+RewriteCond %{THE_REQUEST} /index HTTP [NC]
 RewriteRule (.*)index.html$ /$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
