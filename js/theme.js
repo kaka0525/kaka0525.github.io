@@ -93,7 +93,7 @@
 		items: 1,
 		autoplay: false,
 		loop: true,
-		nav: false,
+		nav: true,
 		margin: 30,
 		dots: false,
 		responsive: {
