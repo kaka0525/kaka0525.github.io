@@ -8,6 +8,14 @@ body {
     font-family: "Karla", sans-serif;
     color: #797979;
 }
+
+.highlight {
+    /*background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #FFD0AE 65%);*/
+    font-weight: 700;
+    color: #635b5b;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", sans-serif;
     font-weight: 500;
@@ -92,10 +100,7 @@ button.primary_btn {
     margin: 0 auto;
 }
 
-.body-text-highlighted {
-    border-bottom: 4px solid rgba(255, 195, 64, .39);
-    font-weight: 400;
-}
+
 
 @media (max-width: 1199px) {
     .section_gap {
@@ -193,7 +198,7 @@ button.primary_btn {
 
 .feature-animation-section{
     margin-top: 8%;
-    margin-bottom: 8%;
+    /*margin-bottom: 8%;*/
 }
 
 .client-img-fluid {

@@ -179,6 +179,7 @@ a {
     color: #F98560;
     text-decoration: none;
     background-color: transparent;
+    font-weight: 400;
     -webkit-text-decoration-skip: objects
 }
 

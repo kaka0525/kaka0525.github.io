@@ -82,9 +82,9 @@
         <div class="col-lg-8 mt-4 mb-4 mb-lg-0">
            <h2><b>Overview</b></h2>
            <p>As F5 Networks strove to improve its product quality standards, it pushed the organization to optimize test coverage. A lot of relatively unknown testing frameworks that had a successful track record started to attract more attention. Often times, the soon-to-be expanded test environments were headless; they lacked a robust, impactful front-end that was ready for a wider audience who were not familiar with the framework to interact with and gain immediately insights from.</p>
-            <p>Carrier was the latest test framework that was in need to establish a broad frontend capability to meet new business needs. I was tasked to design and build the Carrier
-            Graphical User Interface within the existing backend in an effort to
-            help expand its test scope.</p>
+            <p>Carrier was the latest test framework that was in need to establish a broad frontend capability to meet new business needs. I was tasked to <span class="highlight">design and build the Carrier
+            Graphical User Interface </span>within the existing backend in an effort to
+            help <span class="highlight">expand its test scope</span>.</p>
         </div>
       </div>
     </div>
@@ -165,8 +165,8 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 mt-4 mb-4 mb-lg-0">
           <h2><b>The Challenge</b></h2>
-          <p>Our goal for the project was to build a test management tool to onboard more engineers and project managers to Carrier, the soon-to-expand scalable testing framework. Our ambition was to develop new process, design and standards, which other vertical teams can follow when they are expanding their infrastructure tools.</p>
-          <p><b>Our high level goals were to:</b></p>
+          <p>Our goal for the project was to build a test management tool to <span class="highlight"> onboard more engineers and project managers</span> to Carrier, the soon-to-expand scalable testing framework. Our ambition was to <span class="highlight">develop new process, design and standards</span>, which other vertical teams can follow when they are expanding their infrastructure tools.</p>
+          <p>Our high level goals were to:</p>
           <ol>
             <li>Simplify test information into more understandable pieces that allows users to gain quick insights about test suites that have run.</li>
             <li>Build a collaborative system that allows other teams to integrate their test cases in Carrier.</li>
@@ -182,18 +182,17 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 mt-4 mb-4 mb-lg-0">
           <h2><b>Research</b></h2>
-          <p>To understand the problem domain, project scope, and opportunities at a high level, I conducted interviews with stakeholders to comprehend the wider business priorities, pain points and long-term strategies.</p>
-          <p>I shadowed Carrier test engineers when they were performing their dailytasks to get a better grasp of the existing process. And from the
+          <p>To understand the problem domain, project scope, and opportunities at a high level, I conducted <span class="highlight"> interviews with stakeholders to comprehend the wider business priorities, pain points and long-term strategies</span>.</p>
+          <p>I shadowed Carrier test engineers when they were performing their daily tasks to get a better grasp of the existing process. And from the
           interviews and shadowing, I documented what are some areas of improvement and observed where do the pain points and frustrations lie.</p>
           <p>From the user research, I discovered the following:</p>
           <ol>
-            <li>Carrier testing environment is a black box in the eyes of the people
-            who are not within the immediate team. It relies heavily on the tribal
-            knowledge of the two Carrier test engineers to interpret its test results
+            <li><span class="highlight"> Carrier testing environment is a black box</span> in the eyes of the peoplewho are not within the immediate team. It <span class="highlight"> relies heavily on the tribal
+            knowledge</span> of the two Carrier test engineers to interpret its test results
             to the extent that even a simple pass and fail requires manpower to
             decipher.</li>
-            <li>The ability to quickly identify the real-time status and test
-            configuration (test build and branch) of the environment is deemed highly
+            <li>The ability to <span class="highlight"> quickly identify the real-time status and test
+            configuration</span> (test build and branch) of the environment is deemed highly
             desirable.</li>
             <li>Ability to find Carrier’s latest status on test scope expansion plan
             is noted to be an important factor to keep all teams align.</li>
@@ -210,11 +209,11 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 mt-4 mb-4 mb-lg-0">
           <h2><b>Planning & Making</b></h2><!--Add persona assets<-->
-          <p>From the user research, I constructed personas and explored their
+          <p>From the user research, I <span class="highlight"> constructed personas</span> and explored their
           challenges, motivations and goals to determine the use cases and flows
           that captures the right value proposition of each personas. I then
-          partnered up with a Project Manager on prioritizing feature requests,
-          personas’ needs, business objectives and tech feasibility against each
+          partnered up with a Project Manager on <span class="highlight"> prioritizing feature requests,
+          personas’ needs, business objectives</span> and tech feasibility against each
           other and created a list of what features needs to focus on supporting for
           the launch version of the product</p>
         </div>
@@ -261,14 +260,13 @@
           users on the 1st phase of the project and investigated how information
           flows across the organization.</p>
           <p>By doing so, it allowed me to focus for exploring different solutions on
-          representing data in an easy to follow and engaging way, and decided what
-          additional data might be useful for later updates.</p>
+          <span class="highlight"> representing data in an easy to follow and engaging way</span>
+          , and decided what additional data might be useful for later updates.</p>
           <p>I presented sketches in weekly sync ups to stakeholders to assure the
           design reflects the changes that we discussed and actively obtained regular
           feedback and input to expose gaps in requirements and flow. Once we agreed
           on the product features solution, I translated the concepts into fully
-          functional interactive prototype in HTML, CSS and JavaScript. Usability testing is
-          done throughout the whole project cycle to validate the concept and I
+          functional interactive prototype in HTML, CSS and JavaScript. <span class="highlight"> Usability testing is done throughout the whole project</span> cycle to validate the concept and I
           iterated rapidly to discover the optimal user experience to ensure the
           information architecture of the web portal is effective.</p>
         </div>
@@ -281,20 +279,21 @@
         <div class="col-lg-8 mt-4 mb-4 mb-lg-0">
           <h2><b>Solution</b></h2>
           <p>The purpose of the tool is to help the test framework expand by
-          ensuring the design presents information in an effective and intuitive
-          format that makes sense to the audience. Hence, empowering teams to work
+          ensuring the design <span class="highlight"> presents information in an
+          effective and intuitive </span>format that makes sense to the audience.
+          Hence, empowering teams to work
           more productively and efficiently. The design principle is to inform with
           a glance without the need of additional training. I used familiar design
           patterns so users don’t need to analyze each interaction to navigate
           through the tool.</p>
           <section>
             <h3>Real time insights of the test environment</h3>
-            <p>A key design challenge was to consider how to illustrate continuous
-            testing data. I opted for the gantt chart inspired design to lists all
+            <p>A key design challenge was to consider how to <span class="highlight"> illustrate continuous
+            testing data</span>. I opted for the gantt chart inspired design to lists all
             the test cases that are scheduled and performed on the vertical axis, and
             time intervals on the horizontal axis. The width of the horizontal bars
-            in the graph shows the duration of each activity. The dynamic timeline
-            depicts the status/state of individual tests with a glance, so users
+            in the graph shows the duration of each activity. The <span class="highlight"> dynamic timeline
+            depicts the status of individual tests with a glance</span>, so users
             can easily get real-time insights on the testing process and easily track
             statuses of individual tests.</p>
           </section>
@@ -313,11 +312,11 @@
               <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-lg-6 col-md-7 mb-4 mb-4 ">
                   <h3>Simple & Digestible Test Results</h3>
-                  <p>The ease of use of the timeline lets users
-                  who are not familiar with the Carrier framework be informed on test
-                  results in an easily understandable format. Users can zoom-in-to reveal the results broken down by the test branch and build in easy to
+                  <p>The timeline demonstrates ease of use by letting users
+                  who are not familiar with the Carrier framework be <span class="highlight"> informed on test
+                  results in an easily understandable format</span>. Users can zoom-in-to reveal the results broken down by the test branch and build in easy to
                   comprehend terms. And hover over the individual tests to see what
-                  tests fail and links to the logs. Hence, this brings users a high level
+                  tests fail and links to the logs. All of which brings users a high level
                   understanding of the characteristics and trends of the the test
                   framework.</p>
                 </div>
@@ -338,8 +337,8 @@
                   <h3>Efficient Proposal Form</h3>
                   <p>Test Requesters will be asked to fill in a test proposal form,
                   which captures the essential information that are needed to set up the
-                  new Carrier test configuration. The form is designed to be simple to
-                  follow so they can quickly go through them without confusion. And with
+                  new Carrier test configuration. The form is <span class="highlight"> designed to be simple to
+                  follow</span> so they can quickly go through them without confusion. And with
                   the data, Carrier engineers can plan and make adjustments to the test
                   framework accordingly to ensure the proposed test can merge in with
                   the existing tests harmoniously.</p>
@@ -352,7 +351,7 @@
               <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-lg-12 col-md-6 mb-lg-0">
                   <h3>Tracks Tasks To Meet Deadlines</h3>
-                  <p>Carrier Task boards is designed to provide a central place for users to organize and manage all of the new test proposals progress in a structured way.</p>
+                  <p>Carrier Task boards is designed to <span class="highlight"> provide a central place for users to organize and manage all of the new test proposals progress</span> in a structured way.</p>
                   <p>The new test management page helps project managers to stay up-to-date on all test proposals. For test requesters, they can use the tool to set deadlines and priorities to ensure the new test automation will get done on time. And Carrier Engineers can communicate and delegate the subtasks to the test requester if there is any missing  information they need to set up for the new automation. In addition, the tool helps them plan their time and meet deadlines without the need to search through emails and notes for to-dos.</p>
                 </div>
               </div>
@@ -401,8 +400,8 @@
                 <div class="col-lg-8 mt-4 mb-4 mb-lg-0">
                   <h2><b>Reflection</b></h2>
                   <p>It has been incredible to see the solution I’ve developed improve the
-                  daily lives of my colleagues and help enhance the underlying performance
-                  of our product. It is rare that some of your end users are only a few
+                  daily lives of my colleagues and helped <span class="highlight"> enhance the underlying performance
+                  of our product</span>. It is rare that some of your end users are only a few
                   desks away and you get immediate feedback and high fives <i class=
                   "em em-raising_hand"></i> when you make significant feedback that improve
                   their daily work flow.</p>
