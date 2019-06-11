@@ -4,6 +4,7 @@
  * Licensed under  ()
  */
 
+
 .owl-carousel,
 .owl-carousel .owl-item {
     -webkit-tap-highlight-color: transparent;
@@ -70,8 +71,8 @@
 }
 
 .owl-carousel .owl-dot,
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-nav .owl-prev {
+.owl-carousel .owl-nav ,
+.owl-carousel .owl-nav {
     cursor: pointer;
     cursor: hand;
     -webkit-user-select: none;
@@ -80,6 +81,31 @@
     -ms-user-select: none;
     user-select: none
 }
+
+.owl-prev {
+    width: 25px;
+    height: 34px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    display: block !important;
+    border:0px solid black;
+}
+
+.owl-next {
+    width: 25px;
+    height: 34px;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    display: block !important;
+    border:0px solid black;
+
+}
+
+/*.owl-prev i, .owl-next i {
+    transform : scale(1,6); color: #ccc;
+}*/
 
 .owl-carousel.owl-loading {
     opacity: 0;
