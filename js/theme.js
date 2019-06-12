@@ -120,13 +120,20 @@
 		}
 	});
 
-   /* $('#timeline').magnificPopup({
+   $('#timeline_hover').magnificPopup({
 
 	items: {
-		src: 'img/portfolio/f5_carrier/timeline_movie.mov'
+		src: 'img/portfolio/f5_carrier/hover_timeline.mp4'
 	},
 	type: 'iframe'
-});*/
+	});
 
+   $('#timeline').magnificPopup({
+
+	items: {
+		src: 'img/portfolio/f5_carrier/timeline_movie.mp4'
+	},
+	type: 'iframe'
+	});
 
 })(jQuery);
