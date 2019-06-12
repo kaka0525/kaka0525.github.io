@@ -120,7 +120,13 @@
 		}
 	});
 
+   /* $('#timeline').magnificPopup({
 
+	items: {
+		src: 'img/portfolio/f5_carrier/timeline_movie.mov'
+	},
+	type: 'iframe'
+});*/
 
 
 })(jQuery);
