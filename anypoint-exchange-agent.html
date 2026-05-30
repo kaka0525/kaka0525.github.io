@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anypoint Exchange Agent — Karen Wong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@600&family=Inter:wght@400;500&family=Tenor+Sans&family=Libre+Franklin:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/images/site_logo.svg" alt="Karen Wong" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="assets/resume/karen-resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <div class="case-hero-banner blue">
+        <div class="case-hero-banner-inner">
+          <h1>Anypoint Exchange Agent</h1>
+          <p class="case-hero-banner-sub">Transforming Anypoint Exchange from a passive catalog into an intelligent partner for asset management and discovery.</p>
+          <img src="assets/images/anypoint-details.png" alt="Anypoint Exchange Agent interface" />
+        </div>
+      </div>
+
+      <section class="cs-section">
+        <div class="cs-overview-grid">
+          <div>
+            <h2>Overview</h2>
+            <p>In late 2025, MuleSoft made a strategic push into the AI and agentic space. The core design teams were fully committed to Agent Fabric, a new agent orchestration platform, which left a gap: the Anypoint Exchange Agent had no dedicated designer. I was brought in from the Salesforce Design team on a three-month loan with a clear mandate: establish the UX strategy, validate it fast, and leave behind a design foundation documented well enough that another designer could carry it forward without losing momentum.</p>
+          </div>
+          <aside class="cs-meta-box">
+            <div class="meta-item"><label>Role</label><span>Lead Product Designer</span></div>
+            <div class="meta-item"><label>Practices</label><span>Led End-to-End UX Strategy, Facilitated Cross-Team Alignment, and Established Scalable Design Foundation</span></div>
+            <div class="meta-item"><label>Time Duration</label><span>Late 2025 – Early 2026</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Background</h2>
+        <p>Anypoint Exchange is MuleSoft's API marketplace, where developers and administrators manage hundreds of assets. The Agent was the first conversational AI experience on the platform, with no existing design system or pattern library to draw from. My job was to build the interaction framework from scratch, within an aggressive launch window, on a domain I was ramping on in real time.</p>
+        <p>The project was already in flight when I joined. The PM had completed initial discovery and written foundational user stories. My role was to bring UX strategy to a team that had momentum but needed a design lead who could move fast, ask the right questions, and make decisions with conviction. The work needed to be left in a state another designer could carry forward.</p>
+      </section>
+
+      <section class="cs-section">
+        <h2>Understanding the Problem</h2>
+        <p>Because discovery was already underway when I joined, my first priority was to understand what the PM had found and figure out where the design thinking needed to go deeper. I reviewed existing research, mapped it against the user stories, and spent time with the PM to pressure-test the assumptions behind them.</p>
+        <p>What emerged was a clear picture of where users were running into walls. The pain clustered around a few recurring friction points that the existing product architecture could not solve.</p>
+        <ul>
+          <li><strong>Manual Housekeeping Burden</strong> — Admins were spending hours on repetitive tasks: updating documentation, managing version lifecycles, and keeping catalogs compliant. With 200+ APIs to manage, this was unsustainable at scale.</li>
+          <li><strong>No post-publication intelligence</strong> — Once an API was published, there was nothing to flag missing documentation, detect non-conformance, or surface quality issues. Asset quality was inconsistent and invisible.</li>
+          <li><strong>Discovery friction</strong> — Standard filters (category, tag, date) couldn't support intent-based search. A developer looking for "payment processing APIs for European markets" had no choice but to manually dig through dozens of assets.</li>
+          <li><strong>No conversational design foundation</strong> — The Exchange Agent was MuleSoft's first conversational UI product. There were no existing patterns to reference or extend — I would need to design the interaction framework from zero.</li>
+        </ul>
+        <blockquote class="cs-callout">
+          <p>How might we help users manage and discover their API assets through a conversational interface — without sacrificing the scale and control that enterprise administrators depend on?</p>
+        </blockquote>
+      </section>
+
+      <section class="cs-section">
+        <h2>Usability Testing &amp; Validation</h2>
+        <p>I designed unmoderated usability tests structured around two personas that reflect the full asset lifecycle:</p>
+        <p><strong>The Exchange Administrator:</strong> Manages catalog quality, enforces compliance standards, and performs "housekeeping" (deprecating old versions, ensuring documentation completeness across hundreds of assets).</p>
+        <p><strong>The Developer:</strong> Seeks fast discovery and reusable assets to accelerate their own work.</p>
+        <p>To keep pace with the engineering timeline, I made an early call to broaden our recruitment criteria. The initial screening required deep Anypoint expertise, which would have slowed us down significantly. I shifted to participants with general API catalog experience instead, which gave us an immediate pool and let us validate core interaction patterns where domain literacy mattered more than platform familiarity. This kept the design process ahead of development rather than behind it.</p>
+        <p>Tests were structured around two themes: foundational interactions like opening and closing the panel, understanding AI suggestions, and rediscovering the agent; and complex multi-step workflows covering bulk operations, the double-panel concept, and reviewing AI-generated documentation drafts. Three main findings shaped the final design.</p>
+        <div class="cs-accordion">
+          <button class="cs-accordion-toggle" type="button" aria-expanded="false">Research Details <span class="chev">⌄</span></button>
+          <div class="cs-accordion-content">
+            <p><strong>What we found:</strong></p>
+            <ol>
+              <li><strong>Message alignment was causing cognitive friction</strong><br>With all messages left-aligned, users had to scan headers to tell their own messages from the agent's responses. The conversation did not read as a conversation. I iterated to a right-aligned user and left-aligned agent pattern, mirroring familiar messaging interfaces.</li>
+              <li><strong>The double-panel vision did not scale to admin workloads</strong><br>Users responded well to the double-panel concept and had no difficulty understanding how the two panels connected. The idea was that when a user asked the agent to address non-conformant APIs, the agent would generate a documentation draft on the spot, surfacing it in a side panel where the user could review and edit it in real time. For individual assets, this felt powerful and intuitive. But when we pushed the scenario to 50 or more APIs missing documentation, the one-at-a-time approach collapsed. Working through each draft individually was too high-touch for the volume administrators were dealing with. The interaction was built for depth, not scale. This finding drove a pivotal conversation with the PM. We agreed to de-scope the double-panel from MVP and prioritize a batch-tagging mechanism instead, letting users apply changes to hundreds of assets through a single natural language command. The double-panel remained documented and validated as a future roadmap item for smaller, more focused tasks.</li>
+              <li><strong>Mascot Design Built Trust</strong><br>Users especially appreciated Agent Max, the friendly mule mascot. His inclusion helped establish an approachable tone, making the AI feel like a helpful assistant rather than a "black-box" algorithm. This was particularly important for easing adoption anxiety around AI.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>The Solution</h2>
+        <p>Before designing a single new component, I needed to understand what already existed. I audited the MuleSoft design system and Salesforce pattern library, mapping behaviors like panel interactions, confirmation dialogs, and status indicators to conversational use cases. The goal was to borrow before building. Where the existing patterns held up, I adapted them. Where they did not, I designed new ones, always keeping them grounded in the same visual logic as the rest of the platform. The goal was for the agent to feel native to the platform, not like a product bolted on from somewhere else.</p>
+      </section>
+
+      <section class="cs-section">
+        <h2>Final Product</h2>
+        <p>The final result elevated how users interact with their API catalog, moving away from a static, search-and-browse experience toward something that actively works with them. Administrators can now manage hundreds of assets through natural conversation, while developers get instant, context-aware answers without digging through documentation.</p>
+        <video src="assets/images/portfolio video/top_video.mp4" class="cs-video-full" autoplay muted loop playsinline></video>
+
+        <div class="cs-feature">
+          <div class="cs-feature-media">
+            <video src="assets/images/portfolio video/suggested_prompts.mov" autoplay muted loop playsinline></video>
+          </div>
+          <div class="cs-feature-text">
+            <h3>Suggested Prompts and Agent Max</h3>
+            <p>First-time users often don't know where to start with a new AI interface. The welcome screen surfaces three curated prompts giving users an immediate entry point without requiring them to figure out what to ask. These are hand-picked to represent the most common starting points, not AI-generated.</p>
+            <p>Agent Max, the MuleSoft mascot, anchors the experience from that first screen. Usability testing showed his presence shifted user sentiment, making the experience feel approachable rather than clinical. For an enterprise product asking users to trust AI with their data, that first impression matters.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature">
+          <div class="cs-feature-media">
+            <video src="assets/images/portfolio video/recommended actions.mov" autoplay muted loop playsinline></video>
+          </div>
+          <div class="cs-feature-text">
+            <h3>Contextual Knowledge Retrieval</h3>
+            <p>Users can ask natural language questions to instantly surface documentation, platform knowledge, and asset recommendations. Rather than hunting through menus or reading help docs, they get answers in context. After every agent response, three suggested follow-up prompts appear — AI-driven so they adapt to where the conversation has gone rather than following a scripted path.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature">
+          <div class="cs-feature-media">
+            <video src="assets/images/portfolio video/Batch Tag.mov" autoplay muted loop playsinline></video>
+          </div>
+          <div class="cs-feature-text">
+            <h3>Batch Tagging</h3>
+            <p>The Exchange Agent proactively identifies assets that don't meet compliance standards due to missing documentation. Rather than flagging them one by one, it surfaces the full set and gives administrators a way to act on all of them at once by applying a missing documentation tag. The agent always confirms before executing. Once approved, the tags are applied across every affected asset, giving administrators a filtered view they can return to when they're ready to do the documentation work. The batch operation turns what would have been hours of manual housekeeping into a single reviewed action.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature">
+          <div class="cs-feature-media">
+            <video src="assets/images/portfolio video/Disambiguate.mov" autoplay muted loop playsinline></video>
+          </div>
+          <div class="cs-feature-text">
+            <h3>Disambiguate &amp; Clarify</h3>
+            <p>When a query matches more than one result, the Exchange Agent pauses before acting. It surfaces the matching options and prompts the user to confirm which API they mean, so the correct asset is always targeted and never assumed. Once the user makes their selection, the action executes and the agent provides a plain-language summary of what changed.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature">
+          <div class="cs-feature-media">
+            <video src="assets/images/portfolio video/explicit approval.mov" autoplay muted loop playsinline></video>
+          </div>
+          <div class="cs-feature-text">
+            <h3>Explicit Approval</h3>
+            <p>The agent always asks before acting. Whether the user is deprecating one asset or hundreds, no action executes without explicit approval. Once the user approves, the action executes and the button disables, giving immediate feedback that the operation is complete. After every action, the agent provides a plain-language summary of what changed so users don't have to reconstruct the outcome from the interface.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Impact &amp; Learnings</h2>
+        <p>My design work was completed and handed off within the project window. Engineering is currently in the spiking phase, with another designer now carrying the work forward into build.</p>
+        <p><strong>Shifting the team's relationship with research —</strong> The MuleSoft team had not done much usability testing before this project, largely viewing it as slow and resource-heavy. By introducing UserTesting.com and running quick validation rounds, I showed that feedback could come back in days rather than weeks. That shift in how the team thought about research felt like one of the more lasting things I contributed.</p>
+        <p><strong>Building a conversational foundation —</strong> Prior to this project, MuleSoft lacked established conversational UI patterns. The interaction framework I designed — covering message alignment, thinking states, confirmation flows, and contextual prompts — now serves as the foundational standard for the MuleSoft Agentic Design System.</p>
+        <p><strong>Shipping a pragmatic MVP without losing sight of the vision —</strong> Testing the double-panel concept revealed something more nuanced than a simple pass or fail. For administrators managing dozens of APIs at once, it was not the right fit. But for smaller, more focused tasks requiring careful review and iteration, the concept showed real promise. The batch-tagging solution addressed the most pressing business need and was the right call for MVP. The double-panel work is documented and intact — when I returned to my automation team and started working on other AI projects, it became a reference point I drew on directly.</p>
+        <p><strong>Adapting quickly without losing design quality —</strong> API management is a specialized domain with its own vocabulary and mental models. Joining mid-project in an unfamiliar space means making peace with not having full context before making decisions. The approach that worked was moving fast on the things I could validate quickly, while being explicit with the PM about the things I was still learning. Trust is built through that honesty, not through projecting confidence you don't yet have.</p>
+      </section>
+
+      <section class="cs-more">
+        <div class="cs-more-grid">
+          <a href="levelten-energy.html" class="cs-more-card">
+            <img src="assets/images/nav-levelten.png" alt="Renewable Transaction Infrastructure" />
+            <div class="t">Transaction Infrastructure</div>
+            <div class="tags">Data Visualization, SaaS, Finance</div>
+          </a>
+          <a href="samsung-mobile.html" class="cs-more-card">
+            <img src="assets/images/nav-samsung.png" alt="Samsung Mobile" />
+            <div class="t">Samsung Mobile</div>
+            <div class="tags">Consumer App, Interaction, Accessibility</div>
+          </a>
+          <a href="puppy-mentorship-program.html" class="cs-more-card">
+            <img src="assets/images/nav-puppy.png" alt="PuPPY Mentorship Program" />
+            <div class="t">PuPPY Mentorship Program</div>
+            <div class="tags">Open-Source, Hackathon</div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="mailto:karen.wsywong@gmail.com">Email</a>
+      <span class="footer-sep">|</span>
+      <a href="https://linkedin.com/in/karenwong1/" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
