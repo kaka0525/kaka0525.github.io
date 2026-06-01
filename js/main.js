@@ -1,15 +1,25 @@
-// Intersection Observer for scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll(
+// Reveal-on-scroll animations
+const revealEls = document.querySelectorAll(
   '.project-card, .cs-section, .case-hero-image, .about-photo, .about-content, .fade-up, .case-hero h1, .case-hero-sub'
-).forEach(el => observer.observe(el));
+);
+
+if ('IntersectionObserver' in window) {
+  // Trigger the moment any part of an element enters (with a small early margin),
+  // then stop observing. Using threshold 0 keeps tall sections from getting stuck hidden.
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+} else {
+  // No IntersectionObserver support: just show everything.
+  revealEls.forEach(el => el.classList.add('in-view'));
+}
 
 // Trigger hero on load
 window.addEventListener('load', () => {
