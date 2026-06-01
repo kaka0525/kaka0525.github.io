@@ -8,7 +8,7 @@
   --border: #e0e0e0;
   --accent: #2f6fd6;
   --card-blue: #e8eff7;
-  --card-green: #e4efe9;
+  --card-green: #d7efec;
   --card-yellow: #f5f0e0;
   --card-sage: #e6ece8;
   --footer-bg: #1a1a1a;
@@ -403,10 +403,11 @@ footer {
 /* two-column feature block: media left, text right */
 .cs-feature {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
+  grid-template-columns: 0.7fr 0.85fr;
+  gap: 64px;
   align-items: center;
-  margin: 64px 0;
+  margin: 96px 0;
+  max-width: 960px;
 }
 .cs-feature-media video,
 .cs-feature-media img {
@@ -416,17 +417,18 @@ footer {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 14px 36px rgba(0, 0, 0, 0.16);
 }
 .cs-feature-text p {
-  font-size: 1.2rem;
-  line-height: 1.9;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 420px;
 }
-.cs-feature-text h3 {
+.cs-section .cs-feature-text h3 {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  line-height: 1.1;
-  margin: 0 0 28px;
+  line-height: 1.2;
+  margin: 0 0 20px;
 }
 
 /* research details accordion */
