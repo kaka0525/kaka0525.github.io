@@ -403,11 +403,22 @@ footer {
 /* two-column feature block: media left, text right */
 .cs-feature {
   display: grid;
-  grid-template-columns: 0.7fr 0.85fr;
+  grid-template-columns: 2fr 1fr;
   gap: 64px;
   align-items: center;
   margin: 96px 0;
   max-width: 960px;
+}
+.js-anim .cs-feature {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.js-anim .cs-feature.in-view { opacity: 1; transform: translateY(0); }
+/* Anypoint feature media are portrait/mobile screens — give them a narrower
+   media column (~15% less wide) than LevelTen's landscape screens. */
+@media (min-width: 769px) {
+  .page-anypoint .cs-feature { grid-template-columns: 1.05fr 1fr; }
 }
 .cs-feature-media video,
 .cs-feature-media img {
@@ -435,7 +446,7 @@ footer {
 .cs-accordion {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin-top: 24px;
+  margin-top: 40px;
   max-width: 900px;
 }
 .cs-accordion-toggle {
@@ -447,7 +458,7 @@ footer {
   border: none;
   padding: 13px 0;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.9375rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -568,9 +579,6 @@ footer {
 .cs-carousel {
   position: relative;
   margin: 32px 0 8px;
-  background: var(--card-yellow);
-  border-radius: 10px;
-  padding: 32px 56px;
 }
 .cs-carousel-viewport { overflow: hidden; }
 .cs-carousel-track {
@@ -580,34 +588,44 @@ footer {
 .cs-carousel-slide {
   min-width: 100%;
   box-sizing: border-box;
-  padding: 0 4px;
+  padding: 0;
 }
 .cs-carousel-slide img {
   width: 100%;
   display: block;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .cs-carousel-prev,
 .cs-carousel-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-  font-size: 1.3rem;
-  line-height: 1;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  font-size: 0;
   color: var(--text);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
-.cs-carousel-prev { left: 10px; }
-.cs-carousel-next { right: 10px; }
+.cs-carousel-prev::before,
+.cs-carousel-next::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 1.5px solid var(--text);
+  border-bottom: 1.5px solid var(--text);
+}
+.cs-carousel-prev::before { transform: translateX(2px) rotate(135deg); }
+.cs-carousel-next::before { transform: translateX(-2px) rotate(-45deg); }
+.cs-carousel-prev { left: 12px; }
+.cs-carousel-next { right: 12px; }
 .cs-carousel-dots {
   display: flex;
   justify-content: center;
@@ -771,7 +789,7 @@ footer {
 .cs-stat-box .num {
   font-family: var(--font-serif);
   font-size: 2.4rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 .cs-stat-box .change {
   text-transform: uppercase;
@@ -787,6 +805,7 @@ footer {
   display: block;
   color: var(--accent);
   font-size: 0.95rem;
+  font-weight: 600;
   margin-bottom: 10px;
   text-decoration: none;
 }
@@ -838,7 +857,7 @@ footer {
 }
 .cs-section p a,
 .cs-section li a {
-  color: var(--accent);
+  color: inherit;
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: opacity 0.2s;
@@ -914,13 +933,23 @@ footer {
 }
 
 .cs-callout {
+  position: relative;
   background: none;
   border: none;
-  padding: 8px 0 8px 28px;
-  margin: 32px 0;
+  padding: 8px 0 8px 52px;
+  margin: 40px 0;
   max-width: 820px;
   text-align: left;
-  border-left: 3px solid var(--accent);
+}
+.cs-callout::before {
+  content: "\201C";
+  position: absolute;
+  left: -4px;
+  top: 0.46em;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 5rem;
+  line-height: 0;
+  color: #cbc6bd;
 }
 .cs-callout p {
   font-family: var(--font-serif);
@@ -1016,7 +1045,7 @@ footer {
   .cs-stat-box-row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .cs-tab-nav { gap: 18px; }
   .cs-tab-btn { font-size: 0.85rem; }
-  .cs-carousel { padding: 20px 44px; }
+  .cs-carousel { padding: 0; }
   .cs-carousel-slide .slide-imgs { gap: 16px; }
   .cs-carousel-slide .slide-imgs img { max-width: 47%; }
   .sm-app-icons { gap: 28px; padding: 24px; }

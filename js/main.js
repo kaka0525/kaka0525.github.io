@@ -1,4 +1,9 @@
-// Reveal-on-scroll animations
+// Mark that JS-driven animations are active. The feature-block "hidden"
+// state is gated behind this class so a stale/failed script can never
+// leave content permanently blank — it just shows without the fade-in.
+document.documentElement.classList.add('js-anim');
+
+// Reveal-on-scroll animations (one-time)
 const revealEls = document.querySelectorAll(
   '.project-card, .cs-section, .case-hero-image, .about-photo, .about-content, .fade-up, .case-hero h1, .case-hero-sub'
 );
@@ -16,9 +21,35 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
   revealEls.forEach(el => observer.observe(el));
+
+  // Safety net: if anything is still hidden after a few seconds (observer
+  // quirk, fast scroll, etc.), reveal it so content is never left blank.
+  setTimeout(() => {
+    revealEls.forEach(el => {
+      if (!el.classList.contains('in-view')) {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in-view');
+      }
+    });
+  }, 2500);
 } else {
   // No IntersectionObserver support: just show everything.
   revealEls.forEach(el => el.classList.add('in-view'));
+}
+
+// Feature walkthrough blocks: ease in AND out, re-triggering each time they
+// enter/leave the central band of the viewport.
+const featureEls = document.querySelectorAll('.cs-feature');
+if ('IntersectionObserver' in window) {
+  const featureObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('in-view', entry.isIntersecting);
+    });
+  }, { threshold: 0, rootMargin: '-12% 0px -12% 0px' });
+
+  featureEls.forEach(el => featureObserver.observe(el));
+} else {
+  featureEls.forEach(el => el.classList.add('in-view'));
 }
 
 // Trigger hero on load
