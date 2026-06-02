@@ -412,7 +412,7 @@ footer {
 .cs-feature-media video,
 .cs-feature-media img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 4px;
   display: block;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 14px 36px rgba(0, 0, 0, 0.16);
 }
@@ -515,12 +515,17 @@ footer {
 }
 .cs-findings li {
   counter-increment: finding;
+  position: relative;
+  padding-left: 2.4em;
   font-size: 0.9375rem;
   line-height: 1.75;
   margin-bottom: 22px;
 }
 .cs-findings li::before {
-  content: "0" counter(finding) ". ";
+  content: "0" counter(finding) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
   font-weight: 600;
 }
 .cs-findings li strong { font-weight: 600; }
@@ -831,12 +836,23 @@ footer {
   margin-bottom: 16px;
   max-width: 900px;
 }
+.cs-section p a,
+.cs-section li a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+.cs-section p a:hover,
+.cs-section li a:hover { opacity: 0.7; }
 
-.cs-section ul {
+.cs-section ul,
+.cs-section ol:not(.cs-findings) {
   padding-left: 20px;
   margin-bottom: 16px;
 }
-.cs-section ul li {
+.cs-section ul li,
+.cs-section ol:not(.cs-findings) li {
   font-size: 0.9375rem;
   line-height: 1.75;
   margin-bottom: 6px;
@@ -849,16 +865,21 @@ footer {
   gap: 48px;
   align-items: start;
 }
+.cs-final-intro {
+  grid-template-columns: 1fr 1.35fr;
+  align-items: center;
+}
+.cs-final-intro .cs-image-full { margin: 0; }
 
 .cs-image-full {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 24px 0;
 }
 
 .cs-video-full {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 24px 0;
   display: block;
 }
