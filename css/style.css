@@ -426,11 +426,19 @@ footer {
    narrower media column (~15% less wide) than LevelTen's landscape screens. */
 @media (min-width: 769px) {
   .page-anypoint .cs-feature,
-  .page-samsung .cs-feature { grid-template-columns: 1.05fr 1fr; }
+  .page-samsung .cs-feature,
+  .page-puppy .cs-feature { grid-template-columns: 1.05fr 1fr; }
   /* Samsung phone-screen videos are very tall portrait; cap them to a phone
      size and center so they don't overwhelm the adjacent text. */
   .page-samsung .cs-feature-media video {
     max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* PuPPy feature walkthroughs are tall portrait phone mockups; cap them to a
+     phone size and center so they don't dominate the page. */
+  .page-puppy .cs-feature-media img {
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -799,6 +807,21 @@ footer {
 }
 .pp-persona-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
 .pp-persona-body p { font-size: 0.85rem; line-height: 1.7; }
+.pp-persona-img {
+  display: block;
+  width: 57.6%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.pp-wireframe-img {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: #fff;
+}
 
 /* captioned figures */
 .cs-figure { margin: 28px 0 0; }
@@ -815,6 +838,13 @@ footer {
   gap: 16px;
 }
 .pp-photo-wide { grid-column: 1 / -1; }
+.pp-photo-wide-img {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
 
 /* bordered stat cards */
 .cs-stat-box-row {
@@ -1042,6 +1072,7 @@ footer {
   color: var(--text);
   margin: 0;
 }
+.page-puppy .cs-callout { max-width: 1020px; }
 
 .cs-stat-row {
   display: flex;
