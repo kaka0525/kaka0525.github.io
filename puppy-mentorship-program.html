@@ -7,7 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="256x256" href="assets/images/favicon-256x256.png" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
 </head>
 <body>
 
@@ -42,7 +44,7 @@
             <p>In 2018, I participated in a hackathon to design an open source, responsive web application to <strong>automate the administrative tasks</strong> of the mentorship program in the interest of <strong>scaling and sustaining its success</strong>.</p>
           </div>
           <div class="cs-feature-media">
-            <div class="cs-ph" style="min-height:420px;">Interactive prototype (phone mockup)</div>
+            <iframe class="cs-prototype" src="https://marvelapp.com/h624c84?emb=1&amp;iosapp=false&amp;frameless=false" width="380" height="680" frameborder="0" allowfullscreen title="PuPPY Mentorship interactive prototype"></iframe>
           </div>
         </div>
         <aside class="cs-meta-box wide">
@@ -55,7 +57,9 @@
 
       <section class="cs-section">
         <h2>The Problem</h2>
-        <p class="cs-lead">How to create an effective management framework that eliminates the time-intensive tasks and hassle from a volunteer-run mentorship program?</p>
+        <p class="cs-lead">How to create an effective management framework that eliminates the time-intensive tasks and hassle from a mentorship program?</p>
+        <p>I led the whole UX and UI design process of the responsive web application and worked alongside with software engineers, product owners and a project manager. The free open source application is being built now and you can check the current progress <a href="https://puppy-mentors.herokuapp.com/" target="_blank" rel="noopener">here</a>.</p>
+        <p>Previously, managing the PuPPy mentoring program has been a time-consuming and low-tech task. It involved manually reading through Google Forms, updating Google Sheets and sending numerous emails. The tedious work has contributed to the high turnover rate of volunteers and it has become burdensome for veterans to keep training new volunteers about the system.</p>
         <p>The program owner sought help to build a <strong>responsive web application that streamlines the administrative tasks</strong> in hopes to alleviate the workload. The open source project strives to become <strong>a tool which any tech community can use to start and manage their mentorship programs.</strong></p>
         <p>The high level goals were to:</p>
         <ol>
@@ -134,22 +138,27 @@
         <div class="cs-accordion">
           <button class="cs-accordion-toggle" type="button" aria-expanded="false">Iterations and Explorations Details <span class="chev">⌄</span></button>
           <div class="cs-accordion-content">
-            <p>Through multiple rounds of sketching and prototype testing, I refined the sign-up flow, the mentor browse-and-match experience, and the participant profile pages — validating the mobile-first information architecture against the primary use cases before moving into high-fidelity design.</p>
+            <p>With the increasing number of participants joining the program in the foreseeable future, there are three design questions that helped shape my design strategy.</p>
+            <ol>
+              <li>One of the constraints of the program is that there are far more mentees than mentors. If a mentee is no longer meeting up with his or her mentor on a regular basis, we would like the mentee to notify the program so that the mentor can be freed to mentor a new mentee.</li>
+              <li>The new mentoring pairing model will depend heavily on mentee self-selection; how much of a mentor's information should we display on the online profile before a pairing is made?</li>
+              <li>How to create a smooth notification process for users when there is a mismatch?</li>
+            </ol>
+            <p>After some brainstorming and research, I proposed four key feature ideas: Hassle-free reassignment, Mentorship Pause, periodic status check-in and progressive personal information disclosure to better streamline the overall administrative process and protect the privacy of mentors. Central to the features were these key ideas:</p>
           </div>
         </div>
       </section>
 
       <section class="cs-section">
         <h2>The Solution</h2>
-        <p>With the increasing number of participants joining the program in the foreseeable future, there are three design questions that helped shape my design strategy.</p>
 
         <div class="cs-feature">
           <div class="cs-feature-media">
-            <div class="cs-ph" style="min-height:420px;">Discontinue pairing — phone mockup</div>
+            <div class="cs-ph" style="min-height:420px;">Hassle-free reassignment — phone mockup</div>
           </div>
           <div class="cs-feature-text">
-            <h3>Discontinue Pairing</h3>
-            <p>Even with good matching, a mismatch between a mentor and mentee can occur. The mismatch may result from difference in areas of expertise, career goals, conflicting personalities, or any number of other reasons. <strong>Mentees can discontinue the pairing on the app</strong> and administrators will subsequently be notified and step in as mediators to resolve disputes or/and help mentees to identify a more appropriate mentor if desired.</p>
+            <h3>Hassle-free Reassignment</h3>
+            <p>Even with the best effort to find the perfect match, a mismatch between a mentor and mentee can occur. The mismatch may result from difference in areas of expertise, career goals, conflicting personalities, or any number of other reasons. <strong>Mentees can discontinue the pairing on the app</strong> and administrators will subsequently be notified and step in as mediators to resolve disputes or/and help mentees to identify a more appropriate mentor if desired.</p>
           </div>
         </div>
 
@@ -159,20 +168,33 @@
           </div>
           <div class="cs-feature-text">
             <h3>Informative Onboarding Tooltips</h3>
-            <p>Once users successfully paired with a mentor, I use tooltips as an onboarding mechanism to grab users attention and <strong>give users a brief overview of the Pause mentorship and Discontinue pairing features</strong>.</p>
-            <p>The <strong>automatic prompts</strong> serve as a reminders on the possible overlooked feature and encourage mentees to check on the progress of the mentoring session and take actions accordingly. The tooltips language are designed to have a <strong>personal, human tone</strong> to get users to pay attention and take action.</p>
+            <p>Once users successfully paired with a mentor, I use tooltips as an onboarding mechanism to grab users attention and <strong>give users a brief overview of the Pause mentorship and Discontinue pairing features</strong>. The tooltip messages are short and concise and they provide users information in a friendly and unobtrusive way. The result aims to be educational rather than unnecessarily disruptive. They help take some of the guesswork out on the button functions.</p>
           </div>
         </div>
 
         <div class="cs-feature">
           <div class="cs-feature-media">
-            <div class="cs-ph" style="min-height:420px;">Mentor profile — phone mockup</div>
+            <div class="cs-ph" style="min-height:420px;">Periodic status check-in — phone mockup</div>
+          </div>
+          <div class="cs-feature-text">
+            <h3>Periodic Status Check-in</h3>
+            <p>Besides the feature tour to guide users through the mentee profile page, it is essential to have <strong>periodic status check in with mentees every three months</strong> to have the latest updates of their mentorship statuses. I believe that such handholding and guidance is necessary for effective mentoring to occur.</p>
+            <p>The automatic prompts serve as a reminders on the possible overlooked feature and encourage mentees to check on the progress of the mentoring session and take actions accordingly. The tooltips language are designed to have a <strong>personal, human tone</strong> to get users to pay attention and take action.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature">
+          <div class="cs-feature-media">
+            <div class="cs-ph" style="min-height:420px;">Incentivize lifelong mentorship — phone mockup</div>
           </div>
           <div class="cs-feature-text">
             <h3>Incentivize Lifelong Mentorship</h3>
             <p>It is natural that an existing mentorship will enter the maintenance phase. Another way to promote users to notify the program when the mentorship is inactive is to provide incentives. Since we have a limited number of mentors, all mentees can only be paired with one mentor. And it is common that the challenges the mentees face when they are starting out are different from what they face 2 to 3 years in the industry.</p>
+            <p>Later in the career, mentees might want to seek out different mentors to expand their network or get a fresh perspective and guidance. If a mentee already been assigned to a mentor and wants to initiate new match, we provide a pop up that is shown explaining the new pairing request is prohibited. There is information that inform them that all mentees can only be assigned to one mentor. In order for them to request a different mentor, they have to <strong>pause on the current pairing</strong> before they can proceed with the new mentor request. The popup helps users to be accustomed to the idea of "pausing a pairing" and to minimize the user's frustration. And mentees are encouraged to maintain connections with previous mentors who they can turn to when desired.</p>
           </div>
         </div>
+
+        <p>The PuPPy matching process will focus on <strong>self-selection</strong>. It raised the question on how much information to display when mentee is browsing through mentor's profiles. The application takes privacy very seriously. Before the match, only mentor's usernames, expertise, introduction are displayed. It does not release the mentor's full name, slack handler, e-mail information until mentors accept the match request.</p>
       </section>
 
       <section class="cs-section">
@@ -183,6 +205,12 @@
           <div class="cs-ph" style="min-height:360px;">Mentorship app screens</div>
           <figcaption>Picture of mentorship app screens</figcaption>
         </figure>
+      </section>
+
+      <section class="cs-section">
+        <h2>Results</h2>
+        <p>By the end of phase one of the Hackathon, we completed the core functionality of the product and delivered a presentation to share the prototype with the community.</p>
+        <p>During the application presentation, we highlighted the major features and presented the vision we have for the application. The project owner was happy with the design and reception of the project is positive. The demo also served the purpose to persuade developers to support its vision and cause.</p>
       </section>
 
       <section class="cs-section">

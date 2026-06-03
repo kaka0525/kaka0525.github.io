@@ -80,15 +80,19 @@ document.querySelectorAll('.cs-tabs').forEach(tabs => {
   });
 });
 
-// Image carousels
+// Image carousels — seamless infinite loop.
+// We clone the first and last slides onto the ends of the track. When the user
+// scrolls onto a clone we let the transition finish, then silently snap to the
+// matching real slide (no transition), so wrapping never visibly rewinds.
 document.querySelectorAll('.cs-carousel').forEach(carousel => {
   const track = carousel.querySelector('.cs-carousel-track');
-  const slides = carousel.querySelectorAll('.cs-carousel-slide');
+  const realSlides = Array.from(carousel.querySelectorAll('.cs-carousel-slide'));
   const dotsWrap = carousel.querySelector('.cs-carousel-dots');
-  let index = 0;
+  const n = realSlides.length;
 
+  // Dots reflect the real slides only.
   const dots = [];
-  slides.forEach((_, i) => {
+  realSlides.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
@@ -98,14 +102,66 @@ document.querySelectorAll('.cs-carousel').forEach(carousel => {
     dots.push(dot);
   });
 
-  function goTo(i) {
-    index = (i + slides.length) % slides.length;
-    track.style.transform = 'translateX(-' + index * 100 + '%)';
-    dots.forEach((d, di) => d.classList.toggle('active', di === index));
+  if (n <= 1) return; // nothing to loop
+
+  // Clone ends. Track layout becomes: [lastClone, s0 … s(n-1), firstClone].
+  const firstClone = realSlides[0].cloneNode(true);
+  const lastClone = realSlides[n - 1].cloneNode(true);
+  firstClone.setAttribute('aria-hidden', 'true');
+  lastClone.setAttribute('aria-hidden', 'true');
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, realSlides[0]);
+
+  // Position 0 = lastClone, 1..n = real slides, n+1 = firstClone.
+  let pos = 1;
+  let animating = false;
+
+  function setTransform(animate) {
+    if (!animate) track.style.transition = 'none';
+    track.style.transform = 'translateX(-' + pos * 100 + '%)';
+    if (!animate) {
+      void track.offsetWidth; // force reflow so the snap is instant
+      track.style.transition = '';
+    }
   }
 
-  carousel.querySelector('.cs-carousel-prev')?.addEventListener('click', () => goTo(index - 1));
-  carousel.querySelector('.cs-carousel-next')?.addEventListener('click', () => goTo(index + 1));
+  function updateDots() {
+    const ri = ((pos - 1) % n + n) % n;
+    dots.forEach((d, di) => d.classList.toggle('active', di === ri));
+  }
+
+  function move(delta) {
+    if (animating) return;
+    animating = true;
+    pos += delta;
+    setTransform(true);
+    updateDots();
+  }
+
+  function goTo(i) {
+    if (animating) return;
+    pos = i + 1;
+    setTransform(true);
+    updateDots();
+  }
+
+  track.addEventListener('transitionend', (e) => {
+    if (e.propertyName !== 'transform') return;
+    animating = false;
+    if (pos === n + 1) {        // landed on first clone → snap to real first
+      pos = 1;
+      setTransform(false);
+    } else if (pos === 0) {     // landed on last clone → snap to real last
+      pos = n;
+      setTransform(false);
+    }
+  });
+
+  setTransform(false); // start on the real first slide (offset past last clone)
+  updateDots();
+
+  carousel.querySelector('.cs-carousel-prev')?.addEventListener('click', () => move(-1));
+  carousel.querySelector('.cs-carousel-next')?.addEventListener('click', () => move(1));
 });
 
 // Nav border on scroll

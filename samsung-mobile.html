@@ -7,9 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="256x256" href="assets/images/favicon-256x256.png" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
 </head>
-<body>
+<body class="page-samsung">
 
   <nav>
     <div class="nav-inner">
@@ -28,7 +30,7 @@
       <div class="case-hero-banner yellow">
         <div class="case-hero-banner-inner">
           <h1>Samsung Mobile</h1>
-          <p class="case-hero-banner-sub">Refining the native Phone app to seamlessly integrate AT&amp;T Call Protect with Samsung's One UI design experience.</p>
+          <p class="case-hero-banner-sub">Refining the phone app to seamlessly integrate AT&amp;T services with the Samsung's New Design Experience</p>
           <img src="assets/images/samsung-details.png" alt="Samsung Phone app incoming call screen" />
         </div>
       </div>
@@ -47,11 +49,14 @@
             <div class="meta-item"><label>Time Duration</label><span>Aug 2018 – Oct 2018</span></div>
           </aside>
         </div>
+        <video src="assets/images/portfolio video/samsung-one-ui-introducing.mp4" class="cs-video-full" autoplay muted loop playsinline></video>
       </section>
 
-      <section class="cs-section">
+      <section class="cs-section cs-section--no-tint">
         <h2>Challenge</h2>
-        <p class="cs-lead">How might we seamlessly integrate the AT&amp;T Call Protect service with the Samsung phone app to ensure a consistent and unified One UI experience?</p>
+        <blockquote class="cs-callout">
+          <p>How might we seamlessly integrate the AT&amp;T Call Protect service with the Samsung phone app to ensure a consistent and unified One UI experience?</p>
+        </blockquote>
       </section>
 
       <section class="cs-section">
@@ -59,9 +64,7 @@
         <p>During my tenure with Samsung Mobile, I oversaw the interaction design for the North America version of the native core communication system. The applications include Phone, Real-Time Text, and Visual Voicemails.</p>
         <p>As the UX lead of this project, I collaborated with cross-functional stakeholders across 5 teams including Product Managers, Engineering team, international version phone designers, as well as external mobile network providers (AT&amp;T, T-Mobile) to ensure user needs, technical specifications, and requirements are met.</p>
         <div class="sm-app-icons">
-          <div class="sm-app"><span class="ico phone">📞</span><span class="lbl">Phone</span></div>
-          <div class="sm-app"><span class="ico msg">💬</span><span class="lbl">Messages</span></div>
-          <div class="sm-app"><span class="ico contact">👤</span><span class="lbl">Contacts</span></div>
+          <img src="assets/images/oneui-app-icons.png" alt="One UI core communication app icons: Phone, Messages, and Contacts">
         </div>
       </section>
 
@@ -83,29 +86,70 @@
       </section>
 
       <section class="cs-section">
-        <h2>Iterations / Conceptualizations</h2>
-        <p>I started identifying the carrier specific screens, created information architecture and interactions that are consistent with the One UI concept. Together with my team and AT&amp;T stakeholders, we discussed the updated design refresh that would ensure a unified One UI experience while also supported the device requirements of AT&amp;T. Once we had confidence in the design after a few rounds of design reviews and usability testing, we began digitalizing the designs.</p>
-        <div class="cs-carousel">
+        <h2>Guiding Principles</h2>
+        <div class="cs-two-col sm-principles">
+          <div>
+            <p>Reducing clutter and distractions, and being mindful of the ergonomics and natural interactions are at the heart of the One UI update. We wanted to ensure the design was translated to the Phone app as well.</p>
+            <p>While designing the new layout and interactions for the application, I anchored on the three principles of One UI: Focus on the task at hand, Interact naturally, Be comfortable to view.</p>
+          </div>
+          <ol class="sm-principle-list">
+            <li>Focus on the task at hand</li>
+            <li>Be comfortable to view</li>
+            <li>Interact naturally</li>
+          </ol>
+        </div>
+        <div class="cs-carousel sm-principle-carousel">
           <div class="cs-carousel-viewport">
             <div class="cs-carousel-track">
               <div class="cs-carousel-slide">
-                <div class="slide-cap">Identified Incoming Call / Provisioned with AT&amp;T Call Protect backend</div>
+                <div class="slide-imgs"><img src="assets/images/oneui-made-to-focus.jpg" alt="One UI — Made to Focus: less clutter, more intuitive" /></div>
+              </div>
+              <div class="cs-carousel-slide">
+                <div class="slide-imgs"><img src="assets/images/oneui-focus-task.jpg" alt="Focus on the task at hand — focus blocks, see more with each tap" /></div>
+              </div>
+              <div class="cs-carousel-slide">
+                <div class="slide-imgs"><img src="assets/images/oneui-interact-naturally.jpg" alt="Interact naturally — closer controls" /></div>
+              </div>
+              <div class="cs-carousel-slide">
+                <div class="slide-imgs"><img src="assets/images/oneui-view-comfortably.jpg" alt="View comfortably — night mode, clear intuitive UI" /></div>
+              </div>
+            </div>
+          </div>
+          <button class="cs-carousel-prev" type="button" aria-label="Previous">‹</button>
+          <button class="cs-carousel-next" type="button" aria-label="Next">›</button>
+          <div class="cs-carousel-dots"></div>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Iterations / Conceptualizations</h2>
+        <p>I started identifying the carrier specific screens, created information architecture and interactions that are consistent with the One UI concept. Together with my team and AT&amp;T stakeholders, we discussed the updated design refresh that would ensure a unified One UI experience while also supported the device requirements of AT&amp;T. Once we had confidence in the design after a few rounds of design reviews and usability testing, we began digitalizing the designs.</p>
+        <div class="cs-carousel sm-iterations-carousel">
+          <div class="cs-carousel-viewport">
+            <div class="cs-carousel-track">
+              <div class="cs-carousel-slide">
                 <div class="slide-imgs">
-                  <img src="assets/images/portfolio video/Identified incoming call.svg" alt="Caller information number display screen" />
-                  <img src="assets/images/portfolio video/Identified incoming call-1.svg" alt="Flagged message display screen" />
+                  <a href="assets/images/portfolio video/Identified incoming call.svg" target="_blank" rel="noopener"><img src="assets/images/portfolio video/Identified incoming call.svg" alt="Identified Incoming Call / Provisioned with AT&amp;T Call Protect backend" /></a>
                 </div>
               </div>
               <div class="cs-carousel-slide">
-                <div class="slide-cap">Flagged Incoming Call</div>
                 <div class="slide-imgs">
-                  <img src="assets/images/portfolio video/Flagged incoming call.svg" alt="Flagged incoming call screen" />
+                  <a href="assets/images/portfolio video/Flagged incoming call.svg" target="_blank" rel="noopener"><img src="assets/images/portfolio video/Flagged incoming call.svg" alt="Flagged Incoming Call" /></a>
                 </div>
               </div>
               <div class="cs-carousel-slide">
-                <div class="slide-cap">Call log details / Call Protect default / Non-identified caller</div>
                 <div class="slide-imgs">
-                  <img src="assets/images/portfolio video/Call log details identified caller.svg" alt="Call log details — identified caller" />
-                  <img src="assets/images/portfolio video/Call log details non-identified caller.svg" alt="Call log details — non-identified caller" />
+                  <a href="assets/images/portfolio video/Identified incoming call-1.svg" target="_blank" rel="noopener"><img src="assets/images/portfolio video/Identified incoming call-1.svg" alt="Call log details / Configured with Call Protect / No default block app" /></a>
+                </div>
+              </div>
+              <div class="cs-carousel-slide">
+                <div class="slide-imgs">
+                  <a href="assets/images/portfolio video/Call log details non-identified caller.svg" target="_blank" rel="noopener"><img src="assets/images/portfolio video/Call log details non-identified caller.svg" alt="Call log details / Call Protect default / Non-identified caller" /></a>
+                </div>
+              </div>
+              <div class="cs-carousel-slide">
+                <div class="slide-imgs">
+                  <a href="assets/images/portfolio video/Call log details identified caller.svg" target="_blank" rel="noopener"><img src="assets/images/portfolio video/Call log details identified caller.svg" alt="Call log details / Call Protect default / Identified caller" /></a>
                 </div>
               </div>
             </div>
@@ -124,48 +168,41 @@
             <p>To ensure the phone app delights users and improves their experience, the redesigns are guided by the three main One UI design principles: <strong>Focus on the task at hand</strong>, <strong>Interact naturally</strong>, <strong>be comfortable to view.</strong></p>
           </div>
           <div class="cs-feature-media">
-            <video src="assets/images/portfolio video/walkthrough_samsung.mp4" autoplay muted loop playsinline></video>
+            <video src="https://dl.dropboxusercontent.com/s/ktjl0ohsizg18j1/walkthrough_samsung.mp4?dl=0" width="100%" loop muted playsinline autoplay></video>
           </div>
         </div>
 
         <div class="cs-feature">
           <div class="cs-feature-media">
-            <video src="assets/images/portfolio video/carrier walkthrough.mp4" autoplay muted loop playsinline></video>
+            <img src="assets/images/samsung-better-reachability.png" alt="Viewing area and interaction area diagram showing two Samsung phone screens" />
           </div>
           <div class="cs-feature-text">
-            <h3>Interaction Area</h3>
-            <p>The top of the screen is reserved for glanceable content where title and caller ID appear. The middle or <strong>bottom half of the display is the interaction area, where the users can more easily reach</strong> all the main action buttons such as blocking or reporting a phone number without having to overstretch their thumbs to the top of the screen.</p>
+            <h3>Better Reachability</h3>
+            <p>To make large screens devices <strong>easier for one-hand use and ergonomically friendly</strong>, the top part of the screen is the view area where title and caller ID appear.</p>
+            <p>The middle or <strong>bottom half of the display is the interaction area, where the users can more easily reach</strong> all the main action buttons such as blocking or reporting a phone number without having to overstretch their thumbs to the top of the screen.</p>
           </div>
         </div>
 
         <div class="cs-feature">
           <div class="cs-feature-media">
-            <video src="assets/images/portfolio video/carrier test proposal.mp4" autoplay muted loop playsinline></video>
+            <video src="assets/images/portfolio video/ss viewing area.mp4" autoplay muted loop playsinline></video>
           </div>
           <div class="cs-feature-text">
             <h3>Know at a Glance Before You Answer</h3>
             <p>The incoming call viewing area contains glanceable caller information so that users know instantly who is calling. For potential nuisance calls, the caller ID is labeled as "Spam Risk", which users can be alerted to.</p>
-            <p>The caller <strong>information animation rotates between the phone number and the flagged</strong> message so users get the full context without interfering with usability.</p>
+            <p>The caller <strong>information animation rotates between the phone number and the flagged AT&amp;T Call Protect message, which draws the user's focus on the information at hand.</strong></p>
+            <p>To ensure the animation is a comfortable user experience without interfering with usability, the incoming caller id and caller information will be announced out loud when user enable that feature in the call or device settings pages. This accessibility feature helps visually-impaired people who rely on audio feedback and voice commands to operate their smartphones.</p>
           </div>
         </div>
 
         <div class="cs-feature">
-          <div class="cs-feature-media">
-            <video src="assets/images/portfolio video/samsung-one-ui-introducing.mp4" autoplay muted loop playsinline></video>
+          <div class="cs-feature-media cs-feature-media--bare">
+            <img src="assets/images/samsung-important-info.png" alt="Call log details cards — orange Spam Risk card and blue Identified caller card with Block, Report, and History actions" />
           </div>
           <div class="cs-feature-text">
-            <h3>Read Out Loud for Accessibility</h3>
-            <p>The incoming caller id and caller information will be announced out loud when user enable that feature in the call or device settings pages. This accessibility feature helps visually-impaired people who rely on audio feedback and voice commands to operate their smartphones.</p>
-          </div>
-        </div>
-
-        <div class="cs-feature">
-          <div class="cs-feature-media">
-            <video src="assets/images/portfolio video/recommended actions.mov" autoplay muted loop playsinline></video>
-          </div>
-          <div class="cs-feature-text">
-            <h3>Chunked Info Blocks to Easily Understand Important Info at Hand</h3>
-            <p>The Call log details page content is <strong>grouped by category</strong> so it is easy for the users to contextualize and focus on the caller info and functions in visual chunks to be quickly scanned and acted on.</p>
+            <h3>Chunked info blocks to easily understand important info at hand</h3>
+            <p>The Call log details page content is <strong>grouped by category</strong> so it is easy for the users to contextualize and focus on the caller info and functions in visual chunks to be <strong>able to quickly navigate their phones.</strong></p>
+            <p>The corners of all cards are rounded to be consistent with the rounded corners on the Samsung devices, which makes the hardware and the UI feel more connected, thus making the device experience more visibility comfortable.</p>
           </div>
         </div>
       </section>
