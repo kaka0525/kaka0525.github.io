@@ -371,7 +371,7 @@ footer {
   font-size: 1.05rem;
   line-height: 1.5;
   color: var(--text);
-  text-transform: capitalize;
+  text-transform: none;
   max-width: 760px;
   margin: 0 auto;
   text-wrap: balance;
@@ -428,6 +428,12 @@ footer {
   .page-anypoint .cs-feature,
   .page-samsung .cs-feature,
   .page-puppy .cs-feature { grid-template-columns: 1.05fr 1fr; }
+  /* Tighten feature block spacing on Samsung — 96px default creates too much
+     dead space between consecutive portrait-video blocks. */
+  .page-samsung .cs-feature { margin: 56px 0; }
+  .page-samsung .cs-section h2 + .cs-feature { margin-top: 28px; }
+  .page-samsung .cs-section h2 + p + .cs-feature { margin-top: 28px; }
+  .page-samsung .cs-section .cs-feature:last-child  { margin-bottom: 0; }
   /* Samsung phone-screen videos are very tall portrait; cap them to a phone
      size and center so they don't overwhelm the adjacent text. */
   .page-samsung .cs-feature-media video {
@@ -639,6 +645,17 @@ footer {
   display: block;
   border-radius: 4px;
 }
+/* carousel images open full size in a new tab — make the wrapping link fill the
+   slide so image widths/centering are preserved, and hint clickability */
+.cs-carousel-slide > a { display: block; }
+.cs-carousel-slide a { cursor: zoom-in; }
+.cs-carousel-slide a:hover img { opacity: 0.9; }
+
+/* JS-wrapped content images: the link is layout-neutral (display:contents) so
+   it adds click-to-open-in-new-tab without affecting sizing or centering. */
+.img-zoom-link { display: contents; }
+.img-zoom-link img { cursor: zoom-in; transition: opacity 0.2s ease; }
+.img-zoom-link img:hover { opacity: 0.9; }
 .cs-carousel-prev,
 .cs-carousel-next {
   position: absolute;
@@ -776,12 +793,40 @@ footer {
   width: 100%;
 }
 
+/* Phone mockup: an iPhone 15 frame PNG (transparent screen + exterior) overlaid
+   on top of a frameless Marvel embed. The metal frame is opaque and sits above
+   the iframe, so it masks the screen's rounded corners; the iframe bleeds a hair
+   under the metal so no gap shows. */
+.cs-phone-mock {
+  position: relative;
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 429 / 884;
+}
+.cs-phone-screen {
+  position: absolute;
+  top: 1.6%;
+  left: 3.9%;
+  right: 3.9%;
+  bottom: 1.5%;
+  overflow: hidden;
+  background: #000;
+  border-radius: 11.2% / 5.2%;
+}
+.cs-phone-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.22));
+}
 .cs-prototype {
   display: block;
-  width: 380px;
-  max-width: 100%;
-  height: 680px;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   border: 0;
 }
 
@@ -809,14 +854,14 @@ footer {
 .pp-persona-body p { font-size: 0.85rem; line-height: 1.7; }
 .pp-persona-img {
   display: block;
-  width: 57.6%;
+  width: 46%;
   height: auto;
   margin: 0 auto;
   border-radius: 8px;
 }
 .pp-wireframe-img {
   display: block;
-  width: 80%;
+  width: 64%;
   height: auto;
   margin: 0 auto;
   border-radius: 8px;
@@ -840,9 +885,10 @@ footer {
 .pp-photo-wide { grid-column: 1 / -1; }
 .pp-photo-wide-img {
   grid-column: 1 / -1;
-  width: 100%;
+  width: 64%;
   height: auto;
   display: block;
+  margin: 0 auto;
   border-radius: 4px;
 }
 
@@ -991,6 +1037,7 @@ footer {
 
 .sm-principle-carousel { margin-top: 36px; }
 .sm-principle-carousel .cs-carousel-slide .slide-imgs { gap: 0; }
+.sm-principle-carousel .cs-carousel-slide .slide-imgs a { display: block; width: 100%; }
 .sm-principle-carousel .cs-carousel-slide .slide-imgs img {
   width: 100%;
   max-width: 100%;
@@ -1073,6 +1120,9 @@ footer {
   margin: 0;
 }
 .page-puppy .cs-callout { max-width: 1020px; }
+/* When a callout closes out a section (heading + quote), drop its bottom
+   margin so the section padding alone sets the spacing below it. */
+.cs-section .cs-callout:last-child { margin-bottom: 0; }
 
 .cs-stat-row {
   display: flex;

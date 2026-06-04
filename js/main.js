@@ -164,6 +164,21 @@ document.querySelectorAll('.cs-carousel').forEach(carousel => {
   carousel.querySelector('.cs-carousel-next')?.addEventListener('click', () => move(1));
 });
 
+// Make content images open full-size in a new tab so visitors can inspect
+// details. Skips images already inside a link (carousels, project cards, logo).
+document.querySelectorAll('main img').forEach(img => {
+  if (img.closest('a')) return;
+  const src = img.getAttribute('src');
+  if (!src) return;
+  const link = document.createElement('a');
+  link.href = src;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.className = 'img-zoom-link';
+  img.parentNode.insertBefore(link, img);
+  link.appendChild(img);
+});
+
 // Nav border on scroll
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
