@@ -252,8 +252,8 @@ footer {
 
 .about-content h1 {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
   margin-bottom: 28px;
 }
 
