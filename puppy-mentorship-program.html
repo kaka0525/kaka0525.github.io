@@ -7,9 +7,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet" />
+  <meta name="description" content="An open source, responsive web app that helps the Python developer community scale and manage their mentorship program." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="PuPPy Mentorship Program — Karen Wong" />
+  <meta property="og:description" content="An open source application that helps the Python developer community scale their mentorship program." />
+  <meta property="og:url" content="https://kaka0525.github.io/puppy-mentorship-program.html" />
+  <meta property="og:image" content="https://kaka0525.github.io/assets/images/puppy-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="256x256" href="assets/images/favicon-256x256.png" />
-  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
 </head>
 <body class="page-puppy">
 
@@ -19,7 +26,7 @@
       <ul class="nav-links">
         <li><a href="index.html">Work</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="assets/resume/karen-resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="assets/resume/karen-resume.pdf" target="_blank" rel="noopener">Resume</a></li>
       </ul>
     </div>
   </nav>
@@ -129,9 +136,9 @@
           <button class="cs-accordion-toggle" type="button" aria-expanded="false">Iterations and Explorations Details <span class="chev">⌄</span></button>
           <div class="cs-accordion-content">
             <p>Mentors are a scarce resource and individuals who have agreed to be mentors have a strong commitment to the process. Throughout the mentorship, mentors and mentees are given the discretion to decide on the mentorship arrangements and meetings. While no specific rules are in place, mentors and mentees are encouraged to meet on a regular basis. We want to avoid situations where mentors become an idle resource. Every mentorship will naturally taper off over time - but not end. One thing we have to design for is to adequately identify mentees who are not actively meeting their mentors so the system will be updated and the mentor's valuable time can be reallocated so more mentees can benefit from their knowledge in the community. And to do so, we need to design to enable mentees to notify the program when their mentorship has stagnated.</p>
-            <p>Though this might sound like an easy step, the are a few potential roadblocks: 1) Feature discovery 2) Incentives for mentees to use the feature.</p>
-            <p>Initially, the team decided to reuse the "Discontinue Pairing button" for the purpose of enabling mentees to notify PuPPy that the mentorship has be paused. But after some debates, I recognized that it is important to distinguish and break down the inactive mentorship notification functionalities into a more discrete non-overlapping functions with the discontinue button.</p>
-            <p>The reasons for the decision is unlike the discontinuing pairing function, which is usually used in early stage of paring: when a mismatch is discovered by the mentor, the mentee, or both and volunteers. Once clicked, administrators will be notified and step in to mediate and resolve the conflict at hand and help mentees to seek for a new suited mentor. In addition to that, the verbiage "Discontinuing pairing" might discourage and deter mentees from using the feature when they have amicable relationships with their mentors. To overcome these roadblocks, I designed the pausing mentionship feature that allows mentees to inform PuPPy that their mentorship is inactive.</p>
+            <p>Though this might sound like an easy step, there are a few potential roadblocks: 1) Feature discovery 2) Incentives for mentees to use the feature.</p>
+            <p>Initially, the team decided to reuse the "Discontinue Pairing button" for the purpose of enabling mentees to notify PuPPy that the mentorship has been paused. But after some debates, I recognized that it is important to distinguish and break down the inactive mentorship notification functionalities into a more discrete non-overlapping functions with the discontinue button.</p>
+            <p>The reasons for the decision is unlike the discontinuing pairing function, which is usually used in early stage of paring: when a mismatch is discovered by the mentor, the mentee, or both and volunteers. Once clicked, administrators will be notified and step in to mediate and resolve the conflict at hand and help mentees to seek for a new suited mentor. In addition to that, the verbiage "Discontinuing pairing" might discourage and deter mentees from using the feature when they have amicable relationships with their mentors. To overcome these roadblocks, I designed the pausing mentorship feature that allows mentees to inform PuPPy that their mentorship is inactive.</p>
           </div>
         </div>
       </section>
@@ -216,8 +223,8 @@
 
       <section class="cs-section">
         <h2>Reflection &amp; Takeaways</h2>
-        <p>It was incredibly meaningful and rewarding to design an open source solution that helps the tech community to implement and scale their mentorship programs. This project is especially close to my heart because I graduated from a coding bootcamp several years ago. I remember vividly the frustration and nerves I experienced when I was starting out in the tech industry. And it was the <strong>formal and informal mentoring</strong> I received from the community that has <strong>enriched me on a personal and professional level</strong> that help me along the way.</p>
-        <p>This project gave me the opportunity to take a design from early concept all the way through to a working prototype, covering research, information architecture, interaction design, and visual design in a compressed timeline. More than the craft, though, it was meaningful to contribute to something that directly serves the tech community. I graduated from a coding bootcamp and know firsthand how much the right mentor changes the trajectory. The <strong>formal and informal mentoring</strong> I received along the way has <strong>enriched me personally and professionally</strong>, and I'm glad I got to pay some of that forward. Even if the free pizza 🍕 was also a strong motivator.</p>
+        <p>This project gave me the opportunity to take a design from early concept all the way through to a working prototype — covering research, information architecture, interaction design, and visual design in a compressed timeline. More than the craft, though, it was incredibly meaningful to design an open source solution that helps the tech community implement and scale their mentorship programs.</p>
+        <p>This one is especially close to my heart. I graduated from a coding bootcamp several years ago, and I remember vividly the frustration and nerves of starting out in the tech industry. It was the <strong>formal and informal mentoring</strong> I received from the community that <strong>enriched me personally and professionally</strong> and helped me along the way — so I'm glad I got to pay some of that forward. Even if the free pizza 🍕 was also a strong motivator.</p>
         <figure class="cs-figure">
           <div class="pp-photo-grid">
             <img src="assets/images/puppy-group-photo.png" alt="PuPPy hackathon team — work session, demo day presentation, and group photo" class="pp-photo-wide-img" />
@@ -253,7 +260,7 @@
     <div class="footer-inner">
       <a href="mailto:karen.wsywong@gmail.com">Email</a>
       <span class="footer-sep">|</span>
-      <a href="https://linkedin.com/in/karenwong1/" target="_blank">LinkedIn</a>
+      <a href="https://linkedin.com/in/karenwong1/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </footer>
 

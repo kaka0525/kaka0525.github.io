@@ -179,6 +179,33 @@ document.querySelectorAll('main img').forEach(img => {
   link.appendChild(img);
 });
 
+// Performance: lazy-load below-the-fold images (keep the hero banner eager so
+// it stays the LCP) and let the browser decode them off the main thread.
+document.querySelectorAll('main img').forEach(img => {
+  if (img.closest('.case-hero-banner')) return;
+  if (!img.hasAttribute('loading')) img.loading = 'lazy';
+  img.decoding = 'async';
+});
+
+// Only run autoplay videos while they're near the viewport. Pages like Anypoint
+// and LevelTen stack many looping clips; playing them all at once is wasteful.
+document.querySelectorAll('main video').forEach(v => {
+  if (!v.hasAttribute('preload')) v.preload = 'metadata';
+});
+if ('IntersectionObserver' in window) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const v = entry.target;
+      if (entry.isIntersecting) {
+        if (v.paused) v.play().catch(() => {});
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '100px 0px' });
+  document.querySelectorAll('main video[autoplay]').forEach(v => videoObserver.observe(v));
+}
+
 // Nav border on scroll
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
