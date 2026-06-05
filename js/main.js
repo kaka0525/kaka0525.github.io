@@ -221,3 +221,25 @@ const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   nav?.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
+
+// Mobile hamburger menu
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+if (nav && navToggle && navMenu) {
+  const closeMenu = () => {
+    nav.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  };
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  // Close after picking a link, on Escape, or when resizing back to desktop.
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+}

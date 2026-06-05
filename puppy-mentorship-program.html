@@ -16,14 +16,17 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="256x256" href="assets/images/favicon-256x256.png" />
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
 </head>
 <body class="page-puppy">
 
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo"><img width="572" height="215" src="assets/images/site_logo.svg" alt="Karen Wong" /></a>
-      <ul class="nav-links">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu">
         <li><a href="index.html">Work</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="assets/resume/karen-resume.pdf" target="_blank" rel="noopener">Resume</a></li>
@@ -195,9 +198,9 @@
           </div>
         </div>
 
-        <div>
+        <div class="cs-feature-block">
           <h3>Progressive Personal Information Disclosure</h3>
-          <p>The PuPPy matching process will focus on <strong>self-selection</strong>. It raised the question on how much information to display when mentee is browsing through mentor's profiles. The application takes privacy very seriously. Before the match, only mentor's usernames, expertise, introduction are displayed. It does not release the mentor's full name, slack handler, e-mail information until mentors accept the match request.</p>
+          <p>The PuPPy matching process will focus on self-selection. It raised the question on how much information to display when mentee is browsing through mentor's profiles. The application takes privacy very seriously. Before the match, only mentor's usernames, expertise, introduction are displayed. <strong>It does not release the mentor's full name, slack handler, e-mail information until mentors accept the match request.</strong></p>
           <img width="1600" height="1772" src="assets/images/puppy-privacy-disclosure.png" alt="Progressive personal information disclosure — mentor profile before and after mentorship request accepted" style="width:100%;max-width:760px;height:auto;display:block;margin:24px auto 0;" />
         </div>
       </section>
