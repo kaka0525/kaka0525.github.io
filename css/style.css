@@ -119,12 +119,14 @@ nav.scrolled { border-color: var(--border); }
   background: none;
   border: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .nav-toggle span {
   display: block;
   width: 22px;
   height: 2px;
-  border-radius: 2px;
   background: var(--text);
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
