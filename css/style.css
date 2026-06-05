@@ -539,6 +539,7 @@ footer {
   font-size: 0.9375rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-align: left;
   color: var(--muted);
   cursor: pointer;
 }
