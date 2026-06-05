@@ -852,10 +852,15 @@ footer {
 }
 .pp-persona-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
 .pp-persona-body p { font-size: 0.85rem; line-height: 1.7; }
-.pp-persona-img {
+/* Persona source cards differ in aspect ratio (some 667x420, some 667x500).
+   Pin them to a consistent height so they read as the same size and the
+   carousel doesn't jump vertically between slides. Higher specificity than
+   `.cs-carousel-slide img { width:100% }` so the width override sticks. */
+.cs-carousel .pp-persona-img {
   display: block;
-  width: 46%;
-  height: auto;
+  width: auto;
+  max-width: 100%;
+  height: clamp(280px, 40vw, 480px);
   margin: 0 auto;
   border-radius: 8px;
 }
