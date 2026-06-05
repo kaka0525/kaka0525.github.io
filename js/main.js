@@ -189,10 +189,20 @@ document.querySelectorAll('main img').forEach(img => {
 
 // Only run autoplay videos while they're near the viewport. Pages like Anypoint
 // and LevelTen stack many looping clips; playing them all at once is wasteful.
+// For visitors who prefer reduced motion, don't autoplay at all — pause the
+// clips and expose native controls so they can opt in.
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 document.querySelectorAll('main video').forEach(v => {
   if (!v.hasAttribute('preload')) v.preload = 'metadata';
+  if (prefersReducedMotion) {
+    v.removeAttribute('autoplay');
+    v.controls = true;
+    v.pause();
+  }
 });
-if ('IntersectionObserver' in window) {
+
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const v = entry.target;

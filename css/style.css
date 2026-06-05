@@ -1223,3 +1223,28 @@ footer {
   .pp-persona-photo { min-height: 240px; }
   .pp-photo-grid { grid-template-columns: 1fr; }
 }
+
+/* Respect users who prefer reduced motion: drop the scroll reveals/transitions
+   and keep all content visible. Autoplay videos are paused (and given controls)
+   from main.js for the same users. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .hero,
+  .project-card,
+  .cs-section,
+  .cs-feature,
+  .case-hero-image,
+  .case-hero h1,
+  .case-hero-sub,
+  .about-photo,
+  .about-content {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
