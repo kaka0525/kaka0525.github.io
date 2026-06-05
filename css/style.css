@@ -608,6 +608,7 @@ footer {
   margin-bottom: -1px;
   font-family: var(--font-sans);
   font-size: 0.95rem;
+  font-weight: 500;
   color: var(--muted);
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
@@ -616,6 +617,7 @@ footer {
 .cs-tab-btn.active {
   color: var(--accent);
   border-bottom-color: var(--accent);
+  font-weight: 600;
 }
 .cs-tab-panel { display: none; }
 .cs-tab-panel.active { display: block; }
