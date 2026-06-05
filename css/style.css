@@ -473,7 +473,8 @@ footer {
   }
   /* PuPPy feature walkthroughs are tall portrait phone mockups; cap them to a
      phone size and center so they don't dominate the page. */
-  .page-puppy .cs-feature-media img {
+  .page-puppy .cs-feature-media img,
+  .page-puppy .cs-feature-media video {
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
